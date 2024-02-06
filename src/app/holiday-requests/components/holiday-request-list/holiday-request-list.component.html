@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="page-title">Holiday Requests</h1>
+    <button pButton type="button" icon="pi pi-plus" label="Create" class="float-right mb-3"></button>
+</div>
+
+<div>
+    <p-table [value]="pageObject.holidayRequests" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5, 10, 20]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Actions</th>
+                <th>Employee</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-holidayRequest>
+            <tr>
+                <td>
+                    <i class="pi pi-eye" style="margin-right: 8px;"></i>
+                    <i class="pi pi-pencil" style="margin-right: 8px;"></i>
+                    <i class="pi pi-trash" style="margin-right: 8px;"></i>
+                </td>
+                <td>{{ holidayRequest.collaborator }}</td>
+                <td>{{ holidayRequest.startDate | date }}</td>
+                <td>{{ holidayRequest.endDate | date }}</td>
+                <td>{{ holidayRequest.status }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
