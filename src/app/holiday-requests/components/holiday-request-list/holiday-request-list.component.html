@@ -17,9 +17,9 @@
         <ng-template pTemplate="body" let-holidayRequest>
             <tr>
                 <td>
-                    <i class="pi pi-eye" style="margin-right: 8px;"></i>
-                    <i class="pi pi-pencil" style="margin-right: 8px;"></i>
-                    <i class="pi pi-trash" style="margin-right: 8px;"></i>
+                    <i class="pi pi-eye icon-with-margin"></i>
+                    <i class="pi pi-pencil icon-with-margin"></i>
+                    <i class="pi pi-trash icon-with-margin" (click)="deleteHolidayRequest(holidayRequest.id)"></i>
                 </td>
                 <td>{{ holidayRequest.collaborator }}</td>
                 <td>{{ holidayRequest.startDate | date }}</td>
@@ -29,4 +29,5 @@
         </ng-template>
     </p-table>
 </div>
-
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

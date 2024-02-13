@@ -17,4 +17,11 @@ export class HolidayRequestListComponent implements OnInit {
     await this.service.getHolidayRequestsList(this.pageObject);
   }
 
+  /**
+   * @description Delete holiday request
+   * @param id holiday request Id 
+   */
+  deleteHolidayRequest(id: string) {
+    this.service.deleteHolidayRequest(id, this.pageObject);
+  }
 }
