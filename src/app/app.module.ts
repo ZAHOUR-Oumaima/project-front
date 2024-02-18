@@ -13,7 +13,8 @@ import { ConfirmationService } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,9 +40,14 @@ import { HolidayRequestEditComponent } from './holiday-requests/components/holid
     CalendarModule,
     InputTextareaModule,
     FormsModule,
-    DialogModule
+    DialogModule,
+    DynamicDialogModule
   ],
-  providers: [MessageService, ConfirmationService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    DialogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

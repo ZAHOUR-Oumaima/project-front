@@ -6,6 +6,6 @@ export class HolidayRequest {
     startDate: Date;
     endDate: Date;
     observation: string;
-    requestDate: string;
+    requestDate: Date = new Date();
     status: ValidationStatus;
 }

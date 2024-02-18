@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HolidayRequestPage } from '../../models/holiday-request-page';
+import { HolidayRequestEditManagerService } from './holiday-request-edit-manager.service';
+import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-holiday-request-edit',
@@ -7,16 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HolidayRequestEditComponent implements OnInit {
 
-  value1 = "Oumaima";
-  value2 = new Date();
-  value3 = "HELLO EVERYONE !";
-  constructor() { }
+  pageObject: HolidayRequestPage;
 
-  ngOnInit(): void {
+  constructor(
+    public service: HolidayRequestEditManagerService,
+    private dialogConfig: DynamicDialogConfig
+  ) {
+    this.pageObject = this.dialogConfig.data.pageObject;
+   }
+
+  async ngOnInit() {
+    if (this.pageObject.selectedHollidayId != '') {
+      await this.getHolidayRequestById();
+    }
   }
 
   /**
    * Save holidya request
    */
-  saveHolidayRequest() {}
+  saveHolidayRequest() {
+    this.service.saveHolidayRequest(this.pageObject);
+  }
+
+  /**
+   * Get holiday request
+   */
+  async getHolidayRequestById() {
+    await this.service.getHolidayRequestById(this.pageObject);
+  }
 }

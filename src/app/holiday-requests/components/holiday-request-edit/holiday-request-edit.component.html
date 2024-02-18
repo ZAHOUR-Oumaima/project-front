@@ -4,26 +4,26 @@
 <div class="p-fluid p-grid p-formgrid">
     <div class="p-field p-col-6 p-md-3">
         <label for="collaborator">Collaborator</label>
-        <input type="text" pInputText [(ngModel)]="value1" id="collaborator">
+        <input type="text" pInputText [(ngModel)]="pageObject.holidayRequest.collaborator" id="collaborator">
     </div>
 
     <div class="p-field p-col-6 p-md-3">
         <label for="request-date">Request Date</label>
-        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="request-date"></p-calendar>
+        <p-calendar [(ngModel)]="pageObject.holidayRequest.requestDate" [showIcon]="true" inputId="request-date"></p-calendar>
     </div>
 
     <div class="p-field p-col-6 p-md-3">
         <label for="start-date">Start Date</label>
-        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="start-date"></p-calendar>
+        <p-calendar [(ngModel)]="pageObject.holidayRequest.startDate" [showIcon]="true" inputId="start-date"></p-calendar>
     </div>
 
     <div class="p-field p-col-6 p-md-3">
         <label for="end-date">End Date</label>
-        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="end-date"></p-calendar>
+        <p-calendar [(ngModel)]="pageObject.holidayRequest.endDate" [showIcon]="true" inputId="end-date"></p-calendar>
     </div>
 
     <div class="p-field p-col-12 p-md-3">
         <label for="observation">Observation</label>
-        <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="value3" id="observation"></textarea>
+        <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="pageObject.holidayRequest.observation" id="observation"></textarea>
     </div>
 </div>
