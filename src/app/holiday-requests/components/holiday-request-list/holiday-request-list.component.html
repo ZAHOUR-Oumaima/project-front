@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="page-title">Holiday Requests</h1>
-    <button pButton type="button" icon="pi pi-plus" label="Create" class="float-right mb-3"></button>
+    <button pButton type="button" icon="pi pi-plus" label="Create" class="float-right mb-3" (click)="displayHolidayEditDialog()"></button>
 </div>
 
 <div>
@@ -31,3 +31,6 @@
 </div>
 <p-toast></p-toast>
 <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<p-dialog header="Holidy request edition" [(visible)]="pageObject.displayCreateDialog" [style]="{width: '60vw'}">
+    <app-holiday-request-edit></app-holiday-request-edit>
+</p-dialog>

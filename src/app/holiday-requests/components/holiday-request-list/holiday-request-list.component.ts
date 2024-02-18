@@ -24,4 +24,11 @@ export class HolidayRequestListComponent implements OnInit {
   deleteHolidayRequest(id: string) {
     this.service.deleteHolidayRequest(id, this.pageObject);
   }
+
+  /**
+   * Display holiday request edit dialog 
+   */
+  displayHolidayEditDialog() {
+    this.pageObject.displayCreateDialog = true;
+  }
 }

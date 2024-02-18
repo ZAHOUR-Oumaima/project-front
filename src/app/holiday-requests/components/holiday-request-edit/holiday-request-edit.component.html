@@ -1,1 +1,29 @@
-<p>holiday-request-edit works!</p>
+<div>
+    <button pButton type="button" icon="pi pi-save" label="Save" class="float-right mb-3" (click)="saveHolidayRequest()"></button>
+</div>
+<div class="p-fluid p-grid p-formgrid">
+    <div class="p-field p-col-6 p-md-3">
+        <label for="collaborator">Collaborator</label>
+        <input type="text" pInputText [(ngModel)]="value1" id="collaborator">
+    </div>
+
+    <div class="p-field p-col-6 p-md-3">
+        <label for="request-date">Request Date</label>
+        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="request-date"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-6 p-md-3">
+        <label for="start-date">Start Date</label>
+        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="start-date"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-6 p-md-3">
+        <label for="end-date">End Date</label>
+        <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="end-date"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-3">
+        <label for="observation">Observation</label>
+        <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="value3" id="observation"></textarea>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.p-col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.p-col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+}
